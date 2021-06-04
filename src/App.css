@@ -1,0 +1,118 @@
+.App {
+  display: flex;
+  color: #fff;
+}
+
+.menu {
+  width: 20%;
+  min-width: 300px;
+  height: 100vh;
+  background: #202133;
+}
+
+.display {
+  height: 100vh;
+  width: 80%;
+  overflow: hidden;
+}
+
+.app-btn {
+  background: #fe3d60;
+  border: none;
+  color: #fff;
+}
+
+.side-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  left: 20px;
+  top: 20px;
+}
+
+.side-btn {
+  width: 75px;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.add-text-props {
+  margin-top: 20px;
+  padding: 0 5px;
+}
+
+.add-text-prop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.menu-text-input {
+  width: 200px;
+  border-radius: 5px;
+  padding: 5px;
+  padding-left: 10px;
+}
+
+.align-btn {
+  background: #fff;
+  border-radius: 5px;
+  margin-left: 7px;
+  border: none;
+  padding: 5px 8px;
+}
+
+.align-btn.active {
+  border: 2px solid #fe3d60;
+}
+
+.align-icon {
+  margin-bottom: 3px;
+}
+
+.color-picker {
+  width: 200px;
+  height: 38px;
+  border: 1px solid black;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.sketch-picker {
+  position: absolute;
+  top: 160px;
+  left: 120px;
+  transform: translateX(-50%)
+}
+
+.t-shirt-square {
+  position: absolute;
+  top: 100px;
+  left: 200px;
+  border: 1px solid black;
+  width: 300px;
+  height: 400px;
+}
+
+.t-shirt-square div {
+  height: 406px;
+}
+
+.t-shirt-square h1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.t-shirt-square h1:focus {
+  outline: 1px solid black;
+}
