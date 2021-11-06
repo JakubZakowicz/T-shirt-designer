@@ -5,7 +5,8 @@ import {
     CHANGE_FONT_FAMILY,
     CHANGE_FONT_SIZE,
     CHANGE_FONT_WEIGHT,
-    CHANGE_ALIGNMENT
+    CHANGE_ALIGNMENT,
+    CHANGE_SIDE
 } from '../Actions/actions'
 
 const initialStore = {
@@ -15,10 +16,11 @@ const initialStore = {
     fontWeight: '500',
     color: '#000',
     align: 'center',
-    isColorWindow: false
+    isColorWindow: false,
+    frontSide: true
 }
 
-export default (state = initialStore, action) => {
+const reducer = (state = initialStore, action) => {
     switch(action.type) {
         case TOGGLE_COLOR_WINDOW:
             return { ...state, isColorWindow: !state.isColorWindow }
@@ -34,7 +36,11 @@ export default (state = initialStore, action) => {
             return { ...state, fontWeight: action.payload.value }
         case CHANGE_ALIGNMENT:
             return { ...state, align: action.payload.value }
+        case CHANGE_SIDE:
+            return { ...state, frontSide: action.payload.value }
         default :
             return state
     }
 }
+
+export default reducer
