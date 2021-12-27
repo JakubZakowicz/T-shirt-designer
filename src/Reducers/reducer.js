@@ -6,18 +6,16 @@ import {
     CHANGE_FONT_SIZE,
     CHANGE_FONT_WEIGHT,
     CHANGE_ALIGNMENT,
-    CHANGE_SIDE
 } from '../Actions/actions'
 
 const initialStore = {
-    text: 'Ale zajebista koszulka',
+    text: 'Przód',
     FontFamily: 'Arial',
-    fontSize: '60',
+    fontSize: '20',
     fontWeight: '500',
     color: '#000',
     align: 'center',
     isColorWindow: false,
-    frontSide: true
 }
 
 const reducer = (state = initialStore, action) => {
@@ -36,8 +34,6 @@ const reducer = (state = initialStore, action) => {
             return { ...state, fontWeight: action.payload.value }
         case CHANGE_ALIGNMENT:
             return { ...state, align: action.payload.value }
-        case CHANGE_SIDE:
-            return { ...state, frontSide: action.payload.value }
         default :
             return state
     }

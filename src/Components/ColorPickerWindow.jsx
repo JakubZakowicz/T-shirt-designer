@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import { useRef, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { CHANGE_COLOR, TOGGLE_COLOR_WINDOW } from '../Actions/actions';
 import { SketchPicker } from 'react-color';
@@ -10,7 +10,7 @@ function useOutsideAlerter(ref, dispatch) {
      */
     function handleClickOutside(event) {
       if (ref.current && !ref.current.contains(event.target)) {
-        dispatch({ type: TOGGLE_COLOR_WINDOW })
+        dispatch({ type: TOGGLE_COLOR_WINDOW });
       }
     }
 
@@ -20,7 +20,7 @@ function useOutsideAlerter(ref, dispatch) {
       // Unbind the event listener on clean up
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, [ref]);
+  }, [ref, dispatch]);
 }
 
 function ColorPickerWindow({ color, isColorWindow, dispatch }) {
@@ -28,7 +28,7 @@ function ColorPickerWindow({ color, isColorWindow, dispatch }) {
   useOutsideAlerter(wrapperRef, dispatch);
   return (
     <>
-      {isColorWindow ? (
+      {isColorWindow && (
         <div ref={wrapperRef}>
           <SketchPicker
             color={color}
@@ -40,8 +40,6 @@ function ColorPickerWindow({ color, isColorWindow, dispatch }) {
             }
           />
         </div>
-      ) : (
-        <></>
       )}
     </>
   );

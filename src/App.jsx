@@ -1,9 +1,8 @@
-import React from 'react'
-import './App.css'
 import Menu from './Components/Menu'
 import Display from './Components/Display'
 import { store } from './store'
 import { Provider } from 'react-redux'
+import './App.css'
 
 function App() {
   return (
